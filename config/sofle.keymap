@@ -60,7 +60,7 @@
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                      &trans       &trans     &trans     &trans    &trans     &trans
 &trans     &kp INS      &trans       &trans       &trans       &trans                            &kp PG_UP    &trans     &trans     &trans    &kp PSCRN  &trans
 &trans     &trans       &trans       &trans       &trans       &kp CLCK                          &kp PG_DN    &kp UP     &trans     &trans    &trans     &trans 
-&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &&kp K_REDO  &trans    &trans     &kp LEFT     &kp DOWN   &kp RIGHT  &trans    &trans     &trans
+&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &kp K_REDO   &trans    &trans     &kp LEFT     &kp DOWN   &kp RIGHT  &trans    &trans     &trans
                         &trans       &trans       &trans       &trans       &kp RET   &kp SPACE  &trans       &trans     &trans     &trans
             >;
 
