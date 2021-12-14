@@ -33,17 +33,17 @@
         lower_layer {
 // TODO: Some binds are waiting for shifted keycode support.
 // ------------------------------------------------------------------------------------------------------------
-// |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   | F9   |  F10  |       |
-// |       |     |     |      |      |      |                   |  F11 |  F12  |   _   |  -   |   +   |   =   |
-// |       |     |     |      |      |      |                   |  {   |   }   |   [   |  ]   |   \   |   |   |
-// |       |     |     |      |      |      |        |  |       |      |       |       |      |       |       |
-//               |     |      |      |      | ENTER  |  | SPACE |      |       |       |      |
-            bindings = <
-&trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                                      &kp F6    &kp F7     &kp F8          &kp F9          &kp F10        &trans
-&trans    &trans    &trans    &trans      &trans    &trans                                      &kp F11   &kp F12    &kp UNDER       &kp MINUS       &kp KP_PLUS    &kp EQUAL
-&trans    &trans    &trans    &trans      &trans    &trans                                      &kp LBRC  &kp RBRC   &kp LBKT        &kp RBKT        &kp BSLH       &kp PIPE
-&trans    &trans    &trans    &trans      &trans    &trans    &trans                &trans      &trans    &trans     &trans          &trans          &trans         &trans
-                    &trans    &trans      &trans    &trans    &kp RET               &kp SPACE   &trans    &trans     &trans          &trans
+// | BTCLR | BT0 | BT1 |  BT2 |  BT3 |  BT4 |                   |      |       |       |      |       |       |
+// |       |     |     |  LFT |  UP  |  RGT |                   |      |       |   _   |  -   |   +   |   =   |
+// |       |     |     |      |  DWN |      |                   |  {   |   }   |   [   |  ]   |   \   |   |   |
+// |       |     |     |      |      |      |   BSPC |  |       |      |       |       |      |       |       |
+//                     |      |      |      |  SPACE |  |       |      |       |       |
+			bindings = <
+&bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                         &trans    &trans    &trans          &trans      &trans         &trans
+&trans     &trans           &trans            &kp LEFT          &kp UP       &kp RIGHT                            &trans    &trans    &kp UNDER       &kp MINUS   &kp KP_PLUS    &kp EQUAL
+&trans     &trans           &trans            &trans            &kp DOWN     &trans                               &kp LBRC  &kp RBRC  &kp LBKT        &kp RBKT    &kp BSLH       &kp PIPE
+&trans     &trans           &trans            &trans            &trans       &trans     &kp BSPC    &trans        &trans    &trans    &trans          &trans      &trans         &trans
+                                              &trans            &trans       &trans     &kp SPACE   &trans        &trans    &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -51,17 +51,17 @@
 
         raise_layer {
 /// ------------------------------------------------------------------------------------------------------------
-// |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                   |      |      |       |      |       |       |
-// |     |      |      |       |       |      |                   | PGUP |      |       |      |  PSCR |       |
-// |     |      |      |       |       |      |                   | PGDN |   ^  |       |      |       |       |
-// |     | UNDO | CUT  | COPY  | PASTE | REDO |        |  |       |  <   |   v  |   >   |      |       |       |
-//              |      |       |       |      | ENTER  |  | SPACE |      |      |       |      |
-             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                      &trans       &trans     &trans     &trans    &trans     &trans
-&trans     &trans       &trans       &trans       &trans       &trans                            &kp PG_UP    &trans     &trans     &trans    &kp PSCRN  &trans
-&trans     &trans       &trans       &trans       &trans       &trans                            &kp PG_DN    &kp UP     &trans     &trans    &trans     &trans 
-&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &kp K_REDO   &trans    &trans     &kp LEFT     &kp DOWN   &kp RIGHT  &trans    &trans     &trans
-                        &trans       &trans       &trans       &trans       &kp RET   &kp SPACE  &trans       &trans     &trans     &trans
+// |   F1  |  F2 |  F3 |   F4 |  F5  |  F6  |                   |      |       |       |   1  |   2   |   3   |
+// |  F7   |  F8 |  F9 |  F10 | F11  |  F12 |                   |  LFT |   UP  |  RGT  |   4  |   5   |   6   |
+// |       |     |     |      |      |      |                   | PGUP |  DWN  |       |   7  |   8   |   9   |
+// |       |     |     |      |      |      |        |  |       | PGDN |       |       |      |   0   |       |
+//                     |      |      |      |        |  | ENTER |      |       |       |
+			bindings = <
+&kp F1      &kp F2    &kp F3    &kp F4    &kp F5    &kp F6                       &trans      &trans       &trans         &kp N1     &kp N2     &kp N3
+&kp F7      &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                      &kp LEFT    &kp UP       &kp RIGHT      &kp N4     &kp N5     &kp N6
+&trans      &trans    &trans    &trans    &trans    &trans                       &kp PG_UP   &kp DOWN     &trans         &kp N7     &kp N8     &kp N9
+&trans      &trans    &trans    &trans    &trans    &trans   &trans    &trans    &kp PG_DN   &trans       &trans         &trans     &kp N0     &trans
+                                &trans    &trans    &trans   &trans    &kp RET   &trans      &trans       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
